@@ -14,10 +14,6 @@ import java.awt.*;
 import java.io.IOException;
 
 public class Kanban extends Application {
-    @FXML private AnchorPane Card;
-
-    @FXML private AnchorPane Column;
-
     public static void main(String[] args) {
         launch(args);
     }
