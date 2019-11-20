@@ -14,7 +14,6 @@ public class Controller
     @FXML public AnchorPane card1;
     @FXML public GridPane gridPane;
     @FXML public GridPane column1;
-    //@FXML public VBox v1;
     @FXML
     private void initialize()
     {
