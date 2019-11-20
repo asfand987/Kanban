@@ -5,19 +5,16 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.input.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 
 public class Controller
 {
-    //@FXML
-    // The reference of inputText will be injected by the FXML loader
     @FXML public AnchorPane card1;
     @FXML public GridPane gridPane;
     @FXML public GridPane column1;
+
     @FXML
     private void initialize()
-    {
-    }
+    {}
 
     @FXML
     public void detect() {
