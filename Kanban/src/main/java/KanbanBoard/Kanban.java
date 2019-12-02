@@ -1,35 +1,28 @@
 package KanbanBoard;
 
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.input.*;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import java.io.IOException;
 
 public class Kanban extends Application {
-    //private Button b;
-    public static void main(String[] args) {
-        launch(args);
-    }
 
     @Override
-    public void start(Stage primaryStage) {
-        Parent root = null;
-        try {
-            root = FXMLLoader.load(getClass().getResource("Kanban.fxml"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("Kanban.fxml"));
+        primaryStage.setTitle("Task Management System v1.0");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
         Controller controller = new Controller();
         FXMLLoader loader = new FXMLLoader();
         loader.setController(controller);
-        //Controller c = loader.getController();
 
-        Scene scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+    }
+
+
+    public static void main(String[] args) {
+        launch(args);
     }
 }
