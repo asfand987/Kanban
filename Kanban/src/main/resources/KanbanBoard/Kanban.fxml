@@ -11,12 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="KanbanBoard.Controller">
-    <children>
-        <ImageView fitHeight="635.0" fitWidth="929.0">
-            <image>
-                <Image url="@Alps-Switzerland.jpg" />
-            </image>
-        </ImageView>
+    <children>      
         <HBox layoutX="10.0" layoutY="67.0" prefHeight="527.0" prefWidth="908.0">
             <children>
                 <VBox fx:id="row" prefHeight="570.0" prefWidth="160.0">
