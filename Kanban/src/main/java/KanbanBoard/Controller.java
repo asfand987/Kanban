@@ -93,7 +93,17 @@ public class Controller {
                 }
             });
             but.setOnDragDone((DragEvent e) -> {
+                
                 if (e.getTransferMode() == TransferMode.MOVE) {
+                    p.add("User deleted " +but.getText()+ " from To Do");
+                    row1.getChildren().clear();
+                    for(int i=p.size()-1; i >= 0 ; i--) {
+
+                        Button but2 = new Button();
+
+                        but2.setText( p.get(i)  );
+                        row1.getChildren().add(but2);
+                    }
 
                     row.getChildren().remove(but);
                    // but.rem;
