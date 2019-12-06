@@ -14,8 +14,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
-
+import java.util.*;
 import java.util.ArrayList;
 
 public class Controller {
@@ -28,15 +27,19 @@ public class Controller {
     @FXML private TextField colTitle;
     @FXML private TextField boardTitle;
     @FXML private VBox row;
+    @FXML private VBox row1;
+
     @FXML private HBox col;
     @FXML private Button exit;
     @FXML
     ArrayList<Button> inner = new ArrayList<Button>();
     @FXML
     private ArrayList<Button> cardCount;
+    private LinkedList<String> p = new LinkedList<>();
 
     private void initialize() {
     }
+
 
     @FXML
     private void handleLabel(MouseEvent event) {
@@ -57,13 +60,27 @@ public class Controller {
         card.setText(name);
     }
 
+
     @FXML
     private void addCardPress() {
         newCard.setOnAction((event) -> {
+
             Button but = new Button();
             but.setPrefWidth(160);
             but.setText(newCard.getText());
             row.getChildren().add(but);
+            //////
+            p.add("User added " + newCard.getText()+ " to To Do");
+            row1.getChildren().clear();
+            for(int i=p.size()-1; i >= 0 ; i--) {
+
+                Button but1 = new Button();
+
+                but1.setText(p.get(i) );
+                row1.getChildren().add(but1);
+            }
+            System.out.println(row.getChildren().size()-2);
+            //////
             but.setOnDragDetected(new EventHandler<MouseEvent>(){
                 @Override public void handle(MouseEvent event){
                     Dragboard db = but.startDragAndDrop(TransferMode.ANY);
@@ -77,6 +94,7 @@ public class Controller {
             });
             but.setOnDragDone((DragEvent e) -> {
                 if (e.getTransferMode() == TransferMode.MOVE) {
+
                     row.getChildren().remove(but);
                    // but.rem;
                 }

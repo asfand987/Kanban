@@ -7,10 +7,12 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ScrollPane?>
+
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="KanbanBoard.Controller">
     <children>      
-        <HBox layoutX="10.0" layoutY="67.0" prefHeight="527.0" prefWidth="908.0">
+        <HBox layoutX="10.0" layoutY="67.0" prefHeight="527.0" prefWidth="710.0">
             <children>
                 <VBox fx:id="row" prefHeight="570.0" prefWidth="160.0">
                     <children>
@@ -21,6 +23,12 @@
                 <Separator orientation="VERTICAL" prefHeight="200.0" />
             </children>
         </HBox>
+        <ScrollPane layoutX="720.0" layoutY="67.0" prefHeight="528.0" prefWidth="205.0">
+            <content>
+                <VBox fx:id="row1">
+                </VBox>
+            </content>
+        </ScrollPane>
         <ButtonBar layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="899.0">
             <buttons>
                 <TextField fx:id="boardTitle" text="Board Name" />
