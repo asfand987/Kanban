@@ -17,10 +17,6 @@ public class HomeController {
     @FXML
     private TextField newBoard = new TextField();
 
-
-
-
-
     private void initialize()
     {
     }
