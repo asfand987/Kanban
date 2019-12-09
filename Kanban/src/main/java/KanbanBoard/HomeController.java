@@ -30,7 +30,7 @@ public class HomeController {
     @FXML
     private void addNewBoard()
     {
-        newBoard.setOnAction((event -> {
+        //newBoard.setOnAction((event -> {
             Button Board = new Button();
             Board.setPrefSize(210,500);
             Board.setText(newBoard.getText());
@@ -40,7 +40,7 @@ public class HomeController {
             Board.setOnMouseClicked(event1 -> {
                 newBoard();
             });
-        }));
+       // }));
     }
 
     @FXML

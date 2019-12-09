@@ -29,7 +29,6 @@ public class Controller {
     @FXML private TextField boardTitle;
     @FXML private VBox row;
     @FXML private VBox row1;
-
     @FXML private HBox col;
     @FXML private Button exit;
     @FXML
@@ -38,23 +37,25 @@ public class Controller {
     private ArrayList<Button> cardCount;
     private LinkedList<String> p = new LinkedList<String>();
 
-    /*@FXML
-    private void handleLabel(MouseEvent event) {
-        Object p = (Button) event.getSource();
-        currentCard = (Button) p;
-    }*/
-
     @FXML
     private void addColPress()
     {
-        //newCol.setOnAction((enterEvent)->
-       // {
             VBox column = new VBox();
             Button del = new Button();
             del.setText("X ");
             column.setPrefSize(160,570);
             TextField colTitle = new TextField();
             colTitle.setPrefWidth(160);
+            p.add("User added Column" );
+            row1.getChildren().clear();
+            for(int i=p.size()-1; i >= 0 ; i--) {
+
+            Button but1 = new Button();
+
+            but1.setText(p.get(i) );
+            row1.getChildren().add(but1);
+            }
+        System.out.println(column.getChildren().size()-2);
             TextField addCardTitle = new TextField();
             addCardTitle.setPrefWidth(160);
             colTitle.setText(newCol.getText());
@@ -65,59 +66,62 @@ public class Controller {
             addCardTitle.setPromptText("Add New Card");
             newCol.clear();
             newCol.setPromptText("Add new Column");
-            //column.setBackground(Background.EMPTY);
             String style = "-fx-background-color: rgba(255, 255, 255, 0.5);";
             column.setStyle(style);
             Parent coll = del.getParent();
-            del.setOnAction((e)-> {
+            del.setOnAction(e-> {
                 col.getChildren().remove(coll);
+                p.add("User deleted Column" );
+                row1.getChildren().clear();
+                for(int i=p.size()-1; i >= 0 ; i--) {
+
+                    Button but1 = new Button();
+
+                    but1.setText(p.get(i) );
+                    row1.getChildren().add(but1);
+                }
+                System.out.println(column.getChildren().size()-2);
             });
-            column.setOnDragDetected(new EventHandler<MouseEvent>()
-            {
+            column.setOnDragDetected(new EventHandler<MouseEvent>() {
                 @Override public void handle(MouseEvent event) {
                     Dragboard db = column.startDragAndDrop(TransferMode.MOVE);
                     ClipboardContent content = new ClipboardContent();
-                    content.putString(column.getChildren().toString());
+                    content.putString(column.toString());
                     WritableImage snapshot = column.snapshot(new SnapshotParameters(), null);
                     db.setDragView(snapshot);
                     db.setContent(content);
                     event.consume();
                 }
             });
-
             column.setOnDragDone((DragEvent even) ->
             {
                 if (even.getTransferMode() == TransferMode.MOVE)
                 {
                     col.getChildren().remove(column);
+                    System.out.println("Removed");
                 }
                 even.consume();
             });
 
             col.setOnDragOver((DragEvent event) -> {
-                event.acceptTransferModes(TransferMode.MOVE);
+                event.acceptTransferModes(TransferMode.ANY);
                 event.consume();
             });
 
             col.setOnDragDropped((DragEvent event) -> {
                 Dragboard db = event.getDragboard();
                 boolean success = false;
-                if (db.hasFiles())
-                {
-                    for (File file : db.getFiles())
-                    {
-                        String absolutePath = file.getAbsolutePath();
-                        Image dbimage = new Image(absolutePath);
-                        ImageView dbImageView = new ImageView();
-                        dbImageView.setImage(dbimage);
-                        col.getChildren().add(dbImageView);
-                    }
-
+                if (db.hasString()) {
+                    VBox node = new VBox();
+                    node.setUserData(db.getString());
+                    col.getChildren().addAll(node);
+                    System.out.println("Drop detected");
                     event.setDropCompleted(true);
+                    //col.getChildren();
                 }
-                else
-                {
+                else {
                     event.setDropCompleted(false);
+                    System.out.println(("NOPE"));
                 }
                 event.setDropCompleted(success);
                 event.consume();
@@ -131,8 +135,7 @@ public class Controller {
                 column.getChildren().add(butt);
                 addCardTitle.clear();
                 addCardTitle.setPromptText("Add new Card");
-                ///
-               /* p.add("User added " + newCard.getText()+ " to "+ addCardTitle.getText());
+                p.add("User added " + butt.getText()+ " to "+ addCardTitle.getText());
                 row1.getChildren().clear();
                 for(int i=p.size()-1; i >= 0 ; i--) {
 
@@ -141,8 +144,8 @@ public class Controller {
                     but1.setText(p.get(i) );
                     row1.getChildren().add(but1);
                 }
-                System.out.println(column.getChildren().size()-2);*/
-                ///
+                System.out.println(column.getChildren().size()-2);
+
 
                 butt.setOnDragDetected(new EventHandler<MouseEvent>() {
                     @Override public void handle(MouseEvent event)
@@ -160,7 +163,7 @@ public class Controller {
                 {
                     if (even.getTransferMode() == TransferMode.MOVE)
                     {
-                       /* p.add("User deleted " +butt.getText()+ " from "+ addCardTitle.getText());
+                        p.add("User deleted " +butt.getText()+ " from "+ addCardTitle.getText());
                         row1.getChildren().clear();
                         for(int i=p.size()-1; i >= 0 ; i--) {
 
@@ -168,17 +171,15 @@ public class Controller {
 
                             but2.setText( p.get(i)  );
                             row1.getChildren().add(but2);
-                        }*/
+                        }
                         column.getChildren().remove(butt);
                         // but.rem;
                     }
                     even.consume();
                 });
-
-
             });
 
-            column.setOnDragDone((DragEvent even) ->
+            /*column.setOnDragDone((DragEvent even) ->
             {
                 if (even.getTransferMode() == TransferMode.MOVE)
                 {
@@ -190,12 +191,13 @@ public class Controller {
 
                             but2.setText( p.get(i)  );
                             row1.getChildren().add(but2);
-                        }*/
+                        }
                    // col.getChildren().remove(column);
                     // but.rem;
+                    col.getChildren().remove(column);
                 }
                 even.consume();
-            });
+            });*/
 
             column.setOnDragOver((DragEvent event) -> {
                 event.acceptTransferModes(TransferMode.MOVE);
@@ -234,7 +236,6 @@ public class Controller {
     }
     @FXML
     public void dragDropped(DragEvent event) {
-       // delCard.setOnDragDropped((DragEvent event) -> {
             Dragboard db = event.getDragboard();
             boolean success = false;
             if (db.hasString()) {
@@ -246,7 +247,6 @@ public class Controller {
             }
             event.setDropCompleted(success);
             event.consume();
-      //  });
     }
 }
 
