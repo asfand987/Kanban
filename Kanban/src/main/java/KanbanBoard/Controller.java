@@ -15,6 +15,9 @@ import javafx.scene.input.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 public class Controller {
     @FXML private Button Log;
     @FXML private Button card;
