@@ -3,19 +3,17 @@ package KanbanBoard;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.*;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
-import java.util.*;
-import java.util.ArrayList;
 
 public class Controller {
     @FXML private Button Log;
@@ -28,101 +26,194 @@ public class Controller {
     @FXML private TextField boardTitle;
     @FXML private VBox row;
     @FXML private VBox row1;
-
     @FXML private HBox col;
     @FXML private Button exit;
     @FXML
     ArrayList<Button> inner = new ArrayList<Button>();
     @FXML
     private ArrayList<Button> cardCount;
-    private LinkedList<String> p = new LinkedList<>();
-
-    private void initialize() {
-    }
-
+    private LinkedList<String> p = new LinkedList<String>();
+    private VBox te = new VBox();
 
     @FXML
-    private void handleLabel(MouseEvent event) {
-        Object p = (Button) event.getSource();
-        currentCard = (Button) p;
-    }
-
-    @FXML
-    private void addNewCol(String title) {
-        // int count = 0;
-        //outer.add(inner);
-    }
-
-    @FXML
-    private void addNewCard(String name) {
-        int count = 0;
-        inner.add(count, card);
-        card.setText(name);
-    }
-
-
-    @FXML
-    private void addCardPress() {
-        newCard.setOnAction((event) -> {
-
-            Button but = new Button();
-            but.setPrefWidth(160);
-            but.setText(newCard.getText());
-            row.getChildren().add(but);
-            //////
-            p.add("User added " + newCard.getText()+ " to To Do");
-            row1.getChildren().clear();
+    private void addColPress()
+    {
+            VBox column = new VBox();
+            Button del = new Button();
+            del.setText("X");
+            column.setPrefSize(160,570);
+            TextField colTitle = new TextField();
+            colTitle.setPrefWidth(160);
+            System.out.println(column.getChildren().size()-2);
+            TextField addCardTitle = new TextField();
+            addCardTitle.setPrefWidth(160);
+            colTitle.setText(newCol.getText());
+            p.add("User added column " + colTitle.getText() );
+             row1.getChildren().clear();
             for(int i=p.size()-1; i >= 0 ; i--) {
+            Button but1 = new Button();
+            but1.setText(p.get(i) );
+            row1.getChildren().add(but1);
+        }
+            column.getChildren().add(del);
+            col.getChildren().add(column);
+            column.getChildren().add(colTitle);
+            column.getChildren().add(addCardTitle);
+            addCardTitle.setPromptText("Add New Card");
+            newCol.clear();
+            newCol.setPromptText("Add new Column");
+            String style = "-fx-background-color: rgba(255, 255, 255, 0.5);";
+            column.setStyle(style);
+            Parent coll = del.getParent();
+            del.setOnAction(e-> {
+                col.getChildren().remove(coll);
+                p.add("User deleted column " + colTitle.getText() );
+                row1.getChildren().clear();
+                for(int i=p.size()-1; i >= 0 ; i--) {
 
-                Button but1 = new Button();
+                    Button but1 = new Button();
 
-                but1.setText(p.get(i) );
-                row1.getChildren().add(but1);
-            }
-            System.out.println(row.getChildren().size()-2);
-            //////
-            but.setOnDragDetected(new EventHandler<MouseEvent>(){
-                @Override public void handle(MouseEvent event){
-                    Dragboard db = but.startDragAndDrop(TransferMode.ANY);
+                    but1.setText(p.get(i) );
+                    row1.getChildren().add(but1);
+                }
+                System.out.println(column.getChildren().size()-2);
+            });
+            column.setOnDragDetected(new EventHandler<MouseEvent>() {
+                @Override public void handle(MouseEvent event) {
+                    Dragboard db = column.startDragAndDrop(TransferMode.MOVE);
                     ClipboardContent content = new ClipboardContent();
-                    WritableImage snapshot = but.snapshot(new SnapshotParameters(), null);
+                    WritableImage snapshot = column.snapshot(new SnapshotParameters(), null);
                     db.setDragView(snapshot);
-                    content.putString("rec");
+                    content.putString(column.toString());
                     db.setContent(content);
+                    te = column;
+                    col.getChildren().remove(column);
                     event.consume();
                 }
             });
-            but.setOnDragDone((DragEvent e) -> {
-                
-                if (e.getTransferMode() == TransferMode.MOVE) {
-                    p.add("User deleted " +but.getText()+ " from To Do");
-                    row1.getChildren().clear();
-                    for(int i=p.size()-1; i >= 0 ; i--) {
 
-                        Button but2 = new Button();
-
-                        but2.setText( p.get(i)  );
-                        row1.getChildren().add(but2);
-                    }
-
-                    row.getChildren().remove(but);
-                   // but.rem;
+            column.setOnDragDone((DragEvent even) ->
+            {
+                if (even.getTransferMode() == TransferMode.MOVE)
+                {
+                    col.getChildren().remove(column);
+                    System.out.println("Removed");
                 }
-                e.consume();
+                even.consume();
             });
-            newCard.clear();
-        });
 
-    }
+            col.setOnDragOver((DragEvent event) -> {
+                event.acceptTransferModes(TransferMode.ANY);
+                event.consume();
+            });
 
-    @FXML
-    private void addColPress() {
-        Button title = new Button();
-        title.setPrefWidth(160);
-        newCol.setOnAction((event) -> {
-            title.setText(newCol.getText());
-            col.getChildren().add(title);
-        });
+            col.setOnDragDropped((DragEvent event) -> {
+                Dragboard db = event.getDragboard();
+                boolean success = false;
+                if (db.hasString()) {
+                    VBox node = new VBox();
+                    //node.setUserData(db.getString());
+                   // column.setUserData(db.getString());
+                    col.getChildren().addAll(te);
+                    System.out.println("Drop detected");
+                    event.setDropCompleted(true);
+                    //col.getChildren();
+                }
+                event.setDropCompleted(success);
+                event.consume();
+            });
+
+            addCardTitle.setOnAction((newCardEvent)->
+            {
+                Button butt = new Button();
+                butt.setPrefWidth(160);
+                butt.setText(addCardTitle.getText());
+                column.getChildren().add(butt);
+                addCardTitle.clear();
+                addCardTitle.setPromptText("Add new Card");
+                p.add("User added card " + butt.getText()+ " to "+ addCardTitle.getText());
+                row1.getChildren().clear();
+                for(int i=p.size()-1; i >= 0 ; i--) {
+
+                    Button but1 = new Button();
+
+                    but1.setText(p.get(i) );
+                    row1.getChildren().add(but1);
+                }
+                System.out.println(column.getChildren().size()-2);
+
+
+                butt.setOnDragDetected(new EventHandler<MouseEvent>() {
+                    @Override public void handle(MouseEvent event)
+                    {
+                        Dragboard db = butt.startDragAndDrop(TransferMode.ANY);
+                        ClipboardContent content = new ClipboardContent();
+                        WritableImage snapshot = butt.snapshot(new SnapshotParameters(), null);
+                        db.setDragView(snapshot);
+                        content.putString(butt.getText());
+                        db.setContent(content);
+                        event.consume();
+                    }
+                });
+                butt.setOnDragDone((DragEvent even) ->
+                {
+                    if (even.getTransferMode() == TransferMode.MOVE)
+                    {
+                        p.add("User deleted card" +butt.getText()+ " from "+ addCardTitle.getText());
+                        row1.getChildren().clear();
+                        for(int i=p.size()-1; i >= 0 ; i--) {
+
+                            Button but2 = new Button();
+
+                            but2.setText( p.get(i)  );
+                            row1.getChildren().add(but2);
+                        }
+                        column.getChildren().remove(butt);
+                        // but.rem;
+                    }
+                    even.consume();
+                });
+            });
+
+            /*column.setOnDragDone((DragEvent even) ->
+            {
+                if (even.getTransferMode() == TransferMode.MOVE)
+                {
+                       /* p.add("User deleted " +butt.getText()+ " from "+ addCardTitle.getText());
+                        row1.getChildren().clear();
+                        for(int i=p.size()-1; i >= 0 ; i--) {
+
+                            Button but2 = new Button();
+
+                            but2.setText( p.get(i)  );
+                            row1.getChildren().add(but2);
+                        }
+                   // col.getChildren().remove(column);
+                    // but.rem;
+                    col.getChildren().remove(column);
+                }
+                even.consume();
+            });*/
+
+            column.setOnDragOver((DragEvent event) -> {
+                event.acceptTransferModes(TransferMode.MOVE);
+                event.consume();
+            });
+
+            column.setOnDragDropped((DragEvent event) -> {
+                Dragboard db = event.getDragboard();
+                boolean success = false;
+                if (db.hasString()) {
+                    Button tempBoat = new Button(db.getString());
+                    tempBoat.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
+                    column.getChildren().add(tempBoat);
+                    //column.getChildren().clear();
+                    success = true;
+                }
+                event.setDropCompleted(success);
+                event.consume();
+            });
+       // });
     }
 
     @FXML
@@ -132,30 +223,24 @@ public class Controller {
     }
 
     @FXML
-    public void dragOver()
+    public void dragOver(DragEvent event)
     {
-        delCard.setOnDragOver((DragEvent event) -> {
-                event.acceptTransferModes(TransferMode.MOVE);
-                event.consume();
-            });
+        event.acceptTransferModes(TransferMode.MOVE);
+        event.consume();
     }
-
     @FXML
-    public void dragDropped() {
-        delCard.setOnDragDropped((DragEvent event) -> {
+    public void dragDropped(DragEvent event) {
             Dragboard db = event.getDragboard();
             boolean success = false;
             if (db.hasString()) {
                 Button tempBoat = new Button(db.getString());
                 tempBoat.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
-                //System.out.println("DONE");
                 delCard.getChildren().add(tempBoat);
                 delCard.getChildren().clear();
                 success = true;
             }
             event.setDropCompleted(success);
             event.consume();
-        });
     }
 }
 
