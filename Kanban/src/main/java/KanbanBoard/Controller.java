@@ -267,6 +267,11 @@ public class Controller {
             even.consume();
         });
     }
+
+    @FXML
+    public void save(){
+        new ObjectController().save_file();
+    }
 }
 
 
