@@ -73,6 +73,13 @@ public class Controller {
             resumeCol(cols.getJSONObject(i));
             System.out.println("column resumed : " + cols.getJSONObject(i).getString("title"));
         }
+        JSONArray logs=save.getJSONArray("logs");
+        for(int i=0;i<logs.size();i++)
+        {
+            Button but1 = new Button();
+            but1.setText(logs.get(i).toString());
+            row1.getChildren().add(but1);
+        }
     }
 
     @FXML
@@ -87,12 +94,7 @@ public class Controller {
         TextField addCardTitle = new TextField();
         addCardTitle.setPrefWidth(160);
         colTitle.setText(coljson.getString("title"));
-        row1.getChildren().clear();
-        for(int i=p.size()-1; i >= 0 ; i--) {
-            Button but1 = new Button();
-            but1.setText(p.get(i) );
-            row1.getChildren().add(but1);
-        }
+
         column.getChildren().add(del);
         col.getChildren().add(column);
         column.getChildren().add(colTitle);
