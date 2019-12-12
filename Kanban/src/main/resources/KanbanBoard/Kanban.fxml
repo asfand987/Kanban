@@ -48,7 +48,7 @@
           <Menu mnemonicParsing="false" text="Kanban">
             <items>
               <MenuItem fx:id="save_board" mnemonicParsing="false" onAction="#save" text="Save" />
-                  <MenuItem fx:id="load_board" mnemonicParsing="false" text="Load" />
+                  <MenuItem fx:id="load_board" mnemonicParsing="false" onAction="#load" text="Load" />
             </items>
           </Menu>
         </menus>

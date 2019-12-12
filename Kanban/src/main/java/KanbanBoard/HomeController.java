@@ -55,11 +55,11 @@ public class HomeController {
             Controller controller = new Controller();
             fxmlLoader.setController(controller);
             Stage stage = new Stage();
-            stage.setTitle(newBoard.getText());
+            stage.setTitle(GlobalData.BoardList.get(index).getBoardTitle());
             stage.setScene(new Scene(root2));
-
+            GlobalData.CurrentIndex=index;
             stage.show();
-            controller.myinit(index);
+            controller.myinit(index,stage);
         } catch(Exception e) {
             e.printStackTrace();
         }

@@ -1,5 +1,8 @@
 package KanbanBoard;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -43,18 +46,79 @@ public class Controller {
     private VBox te = new VBox();
     private Button t = new Button();
 
+    //Stage curStage;
 
     //String BoardTitle;
     board CurrentBoard;
 
 
-    public void myinit(int index){
+    public void myinit(int index,Stage stg){
+        System.out.println("myinit");
        CurrentBoard = GlobalData.BoardList.get(index);
+       GlobalData.curStage=stg;
        //System.out.println("kbinit:"+CurrentBoard.getBoardTitle());
        //GlobalData.BoardList.add(CurrentBoard);
       // CurrentBoard.Column.size()
     }
 
+    @FXML
+    private void resumeBoard(JSONObject save)
+    {
+        board resumedBoard=new board(save.getString("title"));
+        System.out.println("resumming board name: "+resumedBoard.getBoardTitle());
+        GlobalData.curStage.setTitle(resumedBoard.getBoardTitle());
+        JSONArray cols=save.getJSONArray("columns");
+        for(int i=0;i<cols.size();i++)
+        {
+            resumeCol(cols.getJSONObject(i));
+            System.out.println("column resumed : " + cols.getJSONObject(i).getString("title"));
+        }
+    }
+
+    @FXML
+    private void resumeCol(JSONObject coljson) {
+        VBox column = new VBox();
+        Button del = new Button();
+        del.setText("X");
+        column.setPrefSize(160, 570);
+        TextField colTitle = new TextField();
+        colTitle.setPrefWidth(160);
+        //System.out.println(column.getChildren().size()-2);
+        TextField addCardTitle = new TextField();
+        addCardTitle.setPrefWidth(160);
+        colTitle.setText(coljson.getString("title"));
+        row1.getChildren().clear();
+        for(int i=p.size()-1; i >= 0 ; i--) {
+            Button but1 = new Button();
+            but1.setText(p.get(i) );
+            row1.getChildren().add(but1);
+        }
+        column.getChildren().add(del);
+        col.getChildren().add(column);
+        column.getChildren().add(colTitle);
+        column.getChildren().add(addCardTitle);
+        addCardTitle.setPromptText("Add New Card");
+        newCol.clear();
+        newCol.setPromptText("Add new Column");
+        String style = "-fx-background-color: rgba(255, 255, 255, 0.5);";
+        column.setStyle(style);
+
+        JSONArray cards= coljson.getJSONArray("cards");
+        for(int i=0;i<cards.size();i++)
+        {
+            column.getChildren().add(resumeCard(cards.getJSONObject(i).getString("title")));
+            System.out.println("card resumed : "+cards.getJSONObject(i).getString("title") );
+        }
+
+    }
+
+    @FXML private Button resumeCard(String cardName)
+    {
+        Button butt = new Button();
+        butt.setPrefWidth(160);
+        butt.setText(cardName);
+        return butt;
+    }
 
     @FXML
     private void addColPress()
@@ -304,11 +368,27 @@ public class Controller {
         });
     }
 
+
+
     @FXML
     public void save(){
-        GlobalData.BoardList.get(GlobalData.BoardList.size()-1).attachLog(p);
-        String str = GlobalData.BoardList.get(GlobalData.BoardList.size()-1).toJson().toJSONString();
+        GlobalData.BoardList.get(GlobalData.CurrentIndex).attachLog(p);
+        String str = GlobalData.BoardList.get(GlobalData.CurrentIndex).toJson().toJSONString();
         new KanbanController().save_file(str);
+    }
+    @FXML
+    public void load(){
+        System.out.println("loading");
+        try {
+            String save_str = new KanbanController().read_save();
+            System.out.println("file read complete");
+            JSONObject kbjson= JSON.parseObject(save_str);
+            System.out.println("json parse complete");
+            resumeBoard(kbjson);
+            System.out.println("loading complete");
+        }catch (Exception e){
+            System.out.println(e.toString());
+        }
     }
 }
 
