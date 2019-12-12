@@ -6,8 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
@@ -36,15 +34,21 @@ public class HomeController {
             Board.setText(newBoard.getText());
             pane.getChildren().add(Board);
 
+//        System.out.println("myinit")
+        board nBoard = new board(newBoard.getText());
+        //System.out.println("kbinit:"+CurrentBoard.getBoardTitle());
+        GlobalData.BoardList.add(nBoard);
+
+        int index=GlobalData.BoardList.size()-1;
 
             Board.setOnMouseClicked(event1 -> {
-                newBoard();
+                newBoard(index);
             });
        // }));
     }
 
     @FXML
-    private void newBoard(){
+    private void newBoard(int index){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Kanban.fxml"));
             Parent root2 = (Parent) fxmlLoader.load();
@@ -53,7 +57,9 @@ public class HomeController {
             Stage stage = new Stage();
             stage.setTitle(newBoard.getText());
             stage.setScene(new Scene(root2));
+
             stage.show();
+            controller.myinit(index);
         } catch(Exception e) {
             e.printStackTrace();
         }

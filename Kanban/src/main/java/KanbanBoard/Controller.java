@@ -6,17 +6,18 @@ import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.*;
-import javafx.scene.layout.*;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+
 
 public class Controller {
     @FXML private Button Log;
@@ -31,6 +32,9 @@ public class Controller {
     @FXML private VBox row1;
     @FXML private HBox col;
     @FXML private Button exit;
+    @FXML private MenuItem save_board;
+    @FXML private MenuItem load_board;
+
     @FXML
     ArrayList<Button> inner = new ArrayList<Button>();
     @FXML
@@ -38,6 +42,20 @@ public class Controller {
     private LinkedList<String> p = new LinkedList<String>();
     private VBox te = new VBox();
     private Button t = new Button();
+
+
+    //String BoardTitle;
+    board CurrentBoard;
+
+
+    public void myinit(int index){
+       CurrentBoard = GlobalData.BoardList.get(index);
+       //System.out.println("kbinit:"+CurrentBoard.getBoardTitle());
+       //GlobalData.BoardList.add(CurrentBoard);
+      // CurrentBoard.Column.size()
+    }
+
+
     @FXML
     private void addColPress()
     {
@@ -47,12 +65,22 @@ public class Controller {
             column.setPrefSize(160,570);
             TextField colTitle = new TextField();
             colTitle.setPrefWidth(160);
-            System.out.println(column.getChildren().size()-2);
+            //System.out.println(column.getChildren().size()-2);
             TextField addCardTitle = new TextField();
             addCardTitle.setPrefWidth(160);
             colTitle.setText(newCol.getText());
             p.add("User added column " + colTitle.getText() );
-             row1.getChildren().clear();
+
+            //put the current column into the list inside board
+            board cBoard=GlobalData.BoardList.get(GlobalData.BoardList.size()-1);
+            column CurrentColumn = new column(colTitle.getText());
+            cBoard.addColumn(CurrentColumn);
+            System.out.println("created column : "+CurrentColumn.getColumnTitle());
+            //CurrentBoard.addColumn(new column("cc"));
+            //CurrentBoard.addColumn(CurrentColumn);
+
+
+            row1.getChildren().clear();
             for(int i=p.size()-1; i >= 0 ; i--) {
             Button but1 = new Button();
             but1.setText(p.get(i) );
@@ -133,6 +161,14 @@ public class Controller {
                     }
                     });
                 p.add("User added card " + butt.getText()+ " to "+ addCardTitle.getText());
+
+
+                //push card
+                card  CurrentCard = new card(butt.getText());
+                //System.out.println(
+                CurrentColumn.ColumnCard.add(CurrentCard);
+                System.out.println("add card title: "+CurrentCard.getCardTitle());
+
                 row1.getChildren().clear();
                 for(int i=p.size()-1; i >= 0 ; i--) {
 
@@ -270,7 +306,9 @@ public class Controller {
 
     @FXML
     public void save(){
-        new ObjectController().save_file();
+        GlobalData.BoardList.get(GlobalData.BoardList.size()-1).attachLog(p);
+        String str = GlobalData.BoardList.get(GlobalData.BoardList.size()-1).toJson().toJSONString();
+        new KanbanController().save_file(str);
     }
 }
 

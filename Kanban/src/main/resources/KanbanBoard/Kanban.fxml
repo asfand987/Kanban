@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="KanbanBoard.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="KanbanBoard.Controller">
     <children>
       <ImageView fitHeight="694.0" fitWidth="956.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -42,13 +42,13 @@
             <Pane fx:id="delCard" minHeight="10.0" minWidth="100.0" onDragDropped="#dragDropped" onDragOver="#dragOver" prefHeight="28.0" prefWidth="166.0" style="-fx-background-color: #EDEDED;" />
             </buttons>
         </ButtonBar>
-      <Button fx:id="exit" layoutX="883.0" layoutY="1.0" mnemonicParsing="false" onAction="#exitApp" prefHeight="26.0" prefWidth="32.0" text="X" />
-      <MenuBar layoutX="-1.0" layoutY="2.0" prefHeight="25.0" prefWidth="886.0">
+      <Button fx:id="exit" layoutX="893.0" layoutY="1.0" mnemonicParsing="false" onAction="#exitApp" prefHeight="26.0" prefWidth="32.0" text="X" />
+      <MenuBar layoutX="-1.0" layoutY="2.0" prefHeight="26.0" prefWidth="899.0">
         <menus>
           <Menu mnemonicParsing="false" text="Kanban">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#save" text="Save" />
-                  <MenuItem mnemonicParsing="false" text="Load" />
+              <MenuItem fx:id="save_board" mnemonicParsing="false" onAction="#save" text="Save" />
+                  <MenuItem fx:id="load_board" mnemonicParsing="false" text="Load" />
             </items>
           </Menu>
         </menus>
