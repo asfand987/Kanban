@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-09T12:47:54" hostname="Asfand-PC" time="3.264">
+<testsuite name="test" tests="6" skipped="0" failures="0" errors="0" timestamp="2019-12-12T23:53:57" hostname="LAPTOP-9JT90421" time="9.175">
   <properties/>
-  <testcase name="testrun" classname="test" time="3.264"/>
+  <testcase name="exitButExists" classname="test" time="1.181"/>
+  <testcase name="testrun" classname="test" time="0.652"/>
+  <testcase name="exitApp" classname="test" time="3.146"/>
+  <testcase name="testMain" classname="test" time="1.685"/>
+  <testcase name="t" classname="test" time="1.858"/>
+  <testcase name="bogus" classname="test" time="0.651"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

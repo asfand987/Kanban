@@ -31,6 +31,8 @@ public class Controller {
     @FXML private VBox row1;
     @FXML private HBox col;
     @FXML private Button exit;
+    Boolean closed = false;
+    deleteCard d = new deleteCard();
     @FXML
     ArrayList<Button> inner = new ArrayList<Button>();
     @FXML
@@ -38,10 +40,13 @@ public class Controller {
     private LinkedList<String> p = new LinkedList<String>();
     private VBox te = new VBox();
     private Button t = new Button();
+    private VBox tem = new VBox();
+    private TextField tee =new TextField();
     @FXML
     private void addColPress()
     {
             VBox column = new VBox();
+            tem = column;
             Button del = new Button();
             del.setText("X");
             column.setPrefSize(160,570);
@@ -49,6 +54,7 @@ public class Controller {
             colTitle.setPrefWidth(160);
             System.out.println(column.getChildren().size()-2);
             TextField addCardTitle = new TextField();
+            tee = addCardTitle;
             addCardTitle.setPrefWidth(160);
             colTitle.setText(newCol.getText());
             p.add("User added column " + colTitle.getText() );
@@ -215,6 +221,7 @@ public class Controller {
 
     @FXML
     public void exitApp(ActionEvent event) {
+        closedApp();
         Stage stage = (Stage) exit.getScene().getWindow();
         stage.close();
     }
@@ -222,12 +229,14 @@ public class Controller {
     @FXML
     public void dragOver(DragEvent event)
     {
+        //d.drag(event);
         event.acceptTransferModes(TransferMode.MOVE);
         event.consume();
     }
     @FXML
     public void dragDropped(DragEvent event) {
-            Dragboard db = event.getDragboard();
+          //  d.drop(event);
+        Dragboard db = event.getDragboard();
             boolean success = false;
             if (db.hasString()) {
                 Button tempBoat = new Button(db.getString());
@@ -235,37 +244,74 @@ public class Controller {
                 delCard.getChildren().add(tempBoat);
                 delCard.getChildren().clear();
                 success = true;
-            }
-            event.setDropCompleted(success);
-            event.consume();
-    }
-
-    @FXML
-    public void dragBut() {
-        t.setOnDragDetected(new EventHandler<MouseEvent>() {
-            @Override public void handle(MouseEvent event) {
-                Dragboard db = t.startDragAndDrop(TransferMode.ANY);
-                ClipboardContent content = new ClipboardContent();
-                WritableImage snapshot = t.snapshot(new SnapshotParameters(), null);
-                db.setDragView(snapshot);
-                content.putString(t.getText());
-                db.setContent(content);
-                event.consume();
-            }
-        });
-        t.setOnDragDone((DragEvent even) -> {
-            if (even.getTransferMode() == TransferMode.MOVE) {
-                //p.add("User deleted card" +t.getText()+ " from "+ addCardTitle.getText());
+                p.add("Deleted card " +tempBoat.getText());
                 row1.getChildren().clear();
                 for(int i=p.size()-1; i >= 0 ; i--) {
                     Button but2 = new Button();
                     but2.setText( p.get(i)  );
                     row1.getChildren().add(but2);
                 }
-               // column.getChildren().remove(t);
+            }
+            event.setDropCompleted(success);
+            event.consume();
+    }
+    public Pane getPane() {
+        return delCard;
+    }
+
+    public void cardmove() {
+        Button butt = new Button();
+        butt.setPrefWidth(160);
+        butt.setText(tee.getText());
+        tem.getChildren().add(butt);
+        tee.clear();
+        tee.setPromptText("Add new Card");
+        butt.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                t = butt;
+            }
+        });
+        p.add("User added card " + butt.getText()+ " to "+ tee.getText());
+        row1.getChildren().clear();
+        for(int i=p.size()-1; i >= 0 ; i--) {
+
+            Button but1 = new Button();
+
+            but1.setText(p.get(i) );
+            row1.getChildren().add(but1);
+        }
+        System.out.println(tem.getChildren().size()-2);
+
+        butt.setOnDragDetected(new EventHandler<MouseEvent>() {
+            @Override public void handle(MouseEvent event) {
+                Dragboard db = butt.startDragAndDrop(TransferMode.ANY);
+                ClipboardContent content = new ClipboardContent();
+                WritableImage snapshot = butt.snapshot(new SnapshotParameters(), null);
+                db.setDragView(snapshot);
+                content.putString(butt.getText());
+                db.setContent(content);
+                event.consume();
+            }
+        });
+        butt.setOnDragDone((DragEvent even) -> {
+            if (even.getTransferMode() == TransferMode.MOVE) {
+                p.add("User added card" +butt.getText()+ " to column"+ tee.getText());
+                row1.getChildren().clear();
+                for(int i=p.size()-1; i >= 0 ; i--) {
+                    Button but2 = new Button();
+                    but2.setText( p.get(i)  );
+                    row1.getChildren().add(but2);
+                }
+                tem.getChildren().remove(butt);
             }
             even.consume();
         });
+    }
+
+    public boolean closedApp() {
+        closed = true;
+        return closed;
     }
 }
 

@@ -39,6 +39,6 @@
             <Pane fx:id="delCard" minHeight="10.0" minWidth="100.0" onDragDropped="#dragDropped" onDragOver="#dragOver" prefHeight="28.0" prefWidth="166.0" style="-fx-background-color: #EDEDED;" />
             </buttons>
         </ButtonBar>
-      <Button fx:id="exit" layoutY="2.0" mnemonicParsing="false" onAction="#exitApp" prefHeight="26.0" prefWidth="32.0" text="X" />
+      <Button fx:id=" " layoutY="2.0" mnemonicParsing="false" onAction="#exitApp" prefHeight="26.0" prefWidth="32.0" text="X" />
     </children>
 </Pane>
