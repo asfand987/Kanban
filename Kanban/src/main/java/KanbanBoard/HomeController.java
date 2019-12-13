@@ -13,10 +13,9 @@ public class HomeController {
     @FXML
     private HBox pane = new HBox();
     @FXML
-    private TextField newBoard = new TextField();
+    public TextField newBoard = new TextField();
 
-    private void initialize()
-    {
+    private void initialize() {
     }
 /*             Button butt = new Button();
                butt.setPrefWidth(160);
@@ -26,13 +25,12 @@ public class HomeController {
                addCardTitle.setPromptText("Add new Card");*/
 
     @FXML
-    private void addNewBoard()
-    {
+    private void addNewBoard() {
         //newBoard.setOnAction((event -> {
-            Button Board = new Button();
-            Board.setPrefSize(210,500);
-            Board.setText(newBoard.getText());
-            pane.getChildren().add(Board);
+        Button Board = new Button();
+        Board.setPrefSize(210, 500);
+        Board.setText(newBoard.getText());
+        pane.getChildren().add(Board);
 
 //        System.out.println("myinit")
         board nBoard = new board(newBoard.getText());
@@ -51,7 +49,7 @@ public class HomeController {
     private void newBoard(int index){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Kanban.fxml"));
-            Parent root2 = (Parent) fxmlLoader.load();
+            Parent root2 = fxmlLoader.load();
             Controller controller = new Controller();
             fxmlLoader.setController(controller);
             Stage stage = new Stage();
@@ -77,9 +75,6 @@ public class HomeController {
 
     }
 */
-
-
-
 
 
 }

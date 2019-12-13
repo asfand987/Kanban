@@ -1,8 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a8114da-36ad-401a-aced-1c6083c2e3e2" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="7a8114da-36ad-401a-aced-1c6083c2e3e2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Kanban.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/deleteCard.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/HomePgTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/test$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/HomePgTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/test-results/test/TEST-HomePgTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/classes/KanbanBoard/Controller$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/classes/KanbanBoard/Controller$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/classes/KanbanBoard/Controller$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/classes/KanbanBoard/Controller$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/classes/KanbanBoard/Controller$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/classes/KanbanBoard/Controller$6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/classes/KanbanBoard/Controller.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/classes/KanbanBoard/HomeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/classes/KanbanBoard/Kanban.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/classes/KanbanBoard/deleteCard.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/KanbanBoard/Alps-Switzerland.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/KanbanBoard/Home.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/KanbanBoard/IMG_0014.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/KanbanBoard/IMG_0015.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/KanbanBoard/IMG_0016.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/KanbanBoard/Kanban.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/KanbanBoard/applogo_c43650ce.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/KanbanBoard/switzerland-1-1200x846.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/classes/HomePgTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/classes/test.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/KanbanBoard/deleteCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HomePgTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/KanbanBoard/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KanbanBoard/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/KanbanBoard/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KanbanBoard/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/KanbanBoard/Kanban.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/KanbanBoard/Kanban.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +100,12 @@
                 <item name="Kanban" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Kanban" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -99,19 +166,7 @@
       <recent name="D:\UserFiles\Desktop\lkx\AgileGroupProject2019\Kanban\build\resources\main\KanbanBoard" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.test">
     <configuration name="Kanban [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -131,11 +186,63 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="Kanban [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="HomePgTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Kanban.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HomePgTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Kanban.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.test" />
+        <item itemvalue="JUnit.HomePgTest" />
+        <item itemvalue="Gradle.Kanban [test]" />
         <item itemvalue="Gradle.Kanban [run]" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
