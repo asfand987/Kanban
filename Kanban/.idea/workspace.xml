@@ -64,6 +64,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/KanbanBoard/Kanban.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/KanbanBoard/Kanban.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -166,7 +167,19 @@
       <recent name="D:\UserFiles\Desktop\lkx\AgileGroupProject2019\Kanban\build\resources\main\KanbanBoard" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.test">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Gradle.Kanban [run]">
     <configuration name="Kanban [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -225,24 +238,12 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Kanban [run]" />
         <item itemvalue="JUnit.test" />
         <item itemvalue="JUnit.HomePgTest" />
         <item itemvalue="Gradle.Kanban [test]" />
-        <item itemvalue="Gradle.Kanban [run]" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />

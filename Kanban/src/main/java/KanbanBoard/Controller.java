@@ -420,19 +420,21 @@ public class Controller {
         new KanbanController().save_file(str);
     }
     @FXML
-    public void load(){
+    public void load() {
         System.out.println("loading");
         try {
             String save_str = new KanbanController().read_save();
             System.out.println("file read complete");
-            JSONObject kbjson= JSON.parseObject(save_str);
+            JSONObject kbjson = JSON.parseObject(save_str);
             System.out.println("json parse complete");
             resumeBoard(kbjson);
             System.out.println("loading complete");
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.toString());
         }
-    public boolean closedApp() {
+    }
+
+        public Boolean closedApp() {
         closed = true;
         return closed;
     }
