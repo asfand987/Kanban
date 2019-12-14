@@ -1,5 +1,6 @@
 package KanbanBoard;
 
+
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -10,9 +11,13 @@ import javafx.scene.Parent;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
+
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.*;
+
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -20,6 +25,7 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+
 
 
 public class Controller {
@@ -30,8 +36,7 @@ public class Controller {
     @FXML private TextField newCol;
     @FXML private TextField newCard;
     @FXML private TextField colTitle;
-    @FXML private TextField boardTitle;
-    @FXML private VBox row;
+    @FXML public TextField boardTitle;
     @FXML private VBox row1;
     @FXML private HBox col;
     @FXML private Button exit;
@@ -42,7 +47,9 @@ public class Controller {
     deleteCard d = new deleteCard();
     @FXML
     ArrayList<Button> inner = new ArrayList<Button>();
+
     @FXML
+
     private ArrayList<Button> cardCount;
     private LinkedList<String> p = new LinkedList<String>();
     private VBox te = new VBox();
@@ -107,6 +114,7 @@ public class Controller {
         String style = "-fx-background-color: rgba(255, 255, 255, 0.5);";
         column.setStyle(style);
 
+
         JSONArray cards= coljson.getJSONArray("cards");
         for(int i=0;i<cards.size();i++)
         {
@@ -129,6 +137,7 @@ public class Controller {
     @FXML
     private void addColPress()
     {
+
             VBox column = new VBox();
             tem = column;
             Button del = new Button();
@@ -154,10 +163,12 @@ public class Controller {
 
             row1.getChildren().clear();
             for(int i=p.size()-1; i >= 0 ; i--) {
+
             Button but1 = new Button();
             but1.setText(p.get(i) );
             row1.getChildren().add(but1);
         }
+
             column.getChildren().add(del);
             col.getChildren().add(column);
             column.getChildren().add(colTitle);
@@ -171,6 +182,7 @@ public class Controller {
             del.setOnAction(e-> {
                 col.getChildren().remove(coll);
                 p.add("User deleted column " + colTitle.getText() );
+
                 row1.getChildren().clear();
                 for(int i=p.size()-1; i >= 0 ; i--) {
                     Button but1 = new Button();
@@ -178,6 +190,7 @@ public class Controller {
                     row1.getChildren().add(but1);
                 }
                 System.out.println(column.getChildren().size()-2);
+
             });
             column.setOnDragDetected(new EventHandler<MouseEvent>() {
                 @Override public void handle(MouseEvent event) {
@@ -192,6 +205,7 @@ public class Controller {
                     event.consume();
                 }
             });
+
 
             column.setOnDragDone((DragEvent even) -> {
                 if (even.getTransferMode() == TransferMode.MOVE) {
@@ -218,14 +232,17 @@ public class Controller {
                 event.consume();
             });
 
-            addCardTitle.setOnAction((newCardEvent)->
+
+            column.setOnDragDone((DragEvent even) ->
             {
+
                 Button butt = new Button();
                 butt.setPrefWidth(160);
-                butt.setText(addCardTitle.getText());
+                butt.setText(addCardTitle.getText());//need to get node id first
                 column.getChildren().add(butt);
                 addCardTitle.clear();
                 addCardTitle.setPromptText("Add new Card");
+
                 butt.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
@@ -241,10 +258,13 @@ public class Controller {
                 CurrentColumn.ColumnCard.add(CurrentCard);
                 System.out.println("add card title: "+CurrentCard.getCardTitle());
 
-                row1.getChildren().clear();
-                for(int i=p.size()-1; i >= 0 ; i--) {
 
-                    Button but1 = new Button();
+                row1.getChildren().clear();
+
+                butt.setOnAction(e->{
+                    getCardDescription(butt.getText());
+                });
+
 
                     but1.setText(p.get(i) );
                     row1.getChildren().add(but1);
@@ -253,6 +273,7 @@ public class Controller {
 
                 butt.setOnDragDetected(new EventHandler<MouseEvent>() {
                     @Override public void handle(MouseEvent event) {
+
                         Dragboard db = butt.startDragAndDrop(TransferMode.ANY);
                         ClipboardContent content = new ClipboardContent();
                         WritableImage snapshot = butt.snapshot(new SnapshotParameters(), null);
@@ -262,9 +283,11 @@ public class Controller {
                         event.consume();
                     }
                 });
+
                 butt.setOnDragDone((DragEvent even) -> {
                     if (even.getTransferMode() == TransferMode.MOVE) {
                         p.add("User added card" +butt.getText()+ " to column"+ addCardTitle.getText());
+
                         row1.getChildren().clear();
                         for(int i=p.size()-1; i >= 0 ; i--) {
                             Button but2 = new Button();
@@ -276,6 +299,7 @@ public class Controller {
                     even.consume();
                 });
             });
+
 
             column.setOnDragOver((DragEvent event) -> {
                 event.acceptTransferModes(TransferMode.MOVE);
@@ -291,6 +315,8 @@ public class Controller {
                     column.getChildren().add(tempBoat);
                     //column.getChildren().clear();
                     success = true;
+
+                  
                     tempBoat.setOnDragDetected(new EventHandler<MouseEvent>() {
                         @Override public void handle(MouseEvent event) {
                             Dragboard db = tempBoat.startDragAndDrop(TransferMode.ANY);
@@ -315,10 +341,12 @@ public class Controller {
                         }
                         even.consume();
                     });
+
                 }
                 event.setDropCompleted(success);
                 event.consume();
             });
+
     }
 
     @FXML
@@ -331,6 +359,7 @@ public class Controller {
     @FXML
     public void dragOver(DragEvent event)
     {
+
         //d.drag(event);
         event.acceptTransferModes(TransferMode.MOVE);
         event.consume();
@@ -437,8 +466,20 @@ public class Controller {
         public Boolean closedApp() {
         closed = true;
         return closed;
-    }
-}
 
+    }
+
+
+    public void setBoardTitle(String boardT)
+    {
+        boardTitle.setText(boardT);
+    }
+
+
+
+
+
+
+}
 
 
