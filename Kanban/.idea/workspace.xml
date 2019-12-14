@@ -1,21 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8101d132-401e-4dc1-aa2c-20df7d1f4c64" name="Default Changelist" comment="">
+    <list default="true" id="7a8114da-36ad-401a-aced-1c6083c2e3e2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Kanban.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/deleteCard.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/HomePgTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/test$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/HomePgTest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/test-results/test/TEST-HomePgTest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/classes/KanbanBoard/Controller$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/classes/KanbanBoard/Controller$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/classes/KanbanBoard/Controller$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/classes/KanbanBoard/Controller$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/classes/KanbanBoard/Controller$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/classes/KanbanBoard/Controller$6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/classes/KanbanBoard/Controller.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/classes/KanbanBoard/HomeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/classes/KanbanBoard/Kanban.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/classes/KanbanBoard/deleteCard.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/KanbanBoard/Alps-Switzerland.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/KanbanBoard/Home.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/KanbanBoard/IMG_0014.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/KanbanBoard/IMG_0015.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/KanbanBoard/IMG_0016.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/KanbanBoard/Kanban.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/KanbanBoard/applogo_c43650ce.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/resources/KanbanBoard/switzerland-1-1200x846.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/classes/HomePgTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/test/classes/test.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/KanbanBoard/deleteCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HomePgTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/KanbanBoard/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/KanbanBoard/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KanbanBoard/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/KanbanBoard/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KanbanBoard/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/KanbanBoard/Kanban.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/KanbanBoard/Kanban.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -66,10 +122,27 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>save</find>
+      <find>save_board</find>
+      <find>load_board</find>
+      <find>#save</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1UaTBw1lzYbaALUan7AZFFZvrSt" />
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-15" />
+    <option name="y" value="-19" />
+    <option name="width" value="1750" />
+    <option name="height" value="980" />
+  </component>
+  <component name="ProjectId" id="1UqCeQlew53iNgENyidSBc4ARou" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -77,31 +150,36 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576170316761" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="KanbanBoard" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Asfand\Documents\KanbanBoard\Kanban\src\test" />
-      <recent name="C:\Users\Asfand\Documents\KanbanBoard\Kanban\src\main" />
+      <recent name="D:\UserFiles\Desktop\lkx\AgileGroupProject2019\Kanban\build\resources\main\KanbanBoard" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager" selected="Gradle.Kanban [run]">
-    <configuration name="Kanban" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="KanbanBoard.Kanban" />
-      <module name="Kanban.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="KanbanBoard.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Kanban [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -140,52 +218,45 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="HomePgTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Kanban.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HomePgTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Kanban.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Kanban [run]" />
+        <item itemvalue="JUnit.test" />
+        <item itemvalue="JUnit.HomePgTest" />
         <item itemvalue="Gradle.Kanban [test]" />
-        <item itemvalue="Application.Kanban" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8101d132-401e-4dc1-aa2c-20df7d1f4c64" name="Default Changelist" comment="" />
-      <created>1574028319558</created>
+      <changelist id="7a8114da-36ad-401a-aced-1c6083c2e3e2" name="Default Changelist" comment="" />
+      <created>1575905476961</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1574028319558</updated>
-      <workItem from="1575593576062" duration="675000" />
-      <workItem from="1575637907404" duration="1036000" />
-      <workItem from="1575639285888" duration="952000" />
+      <updated>1575905476961</updated>
     </task>
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="Kanban_[test] - 2019.11.17 at 22h 11m 54s.xml">
-      <configuration name="Kanban [test]" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="Kanban_[test] - 2019.11.17 at 22h 12m 07s.xml">
-      <configuration name="Kanban [test]" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="Kanban_[test] - 2019.11.17 at 22h 14m 44s.xml">
-      <configuration name="Kanban [test]" configurationId="GradleRunConfiguration" />
-    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -196,53 +267,81 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="28" key="GridCell.Tab.0.bottom" timestamp="1575640280731">
-      <screen x="0" y="23" width="1440" height="781" />
+    <state x="655" y="328" key="FileChooserDialogImpl" timestamp="1576154661138">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1398" height="28" key="GridCell.Tab.0.bottom/0.23.1440.781@0.23.1440.781" timestamp="1575640280731" />
-    <state width="1398" height="28" key="GridCell.Tab.0.bottom/0.23.1440.786@0.23.1440.786" timestamp="1575639600271" />
-    <state width="535" height="506" key="GridCell.Tab.0.bottom/0.23.1440.790@0.23.1440.790" timestamp="1575594252044" />
-    <state width="1398" height="28" key="GridCell.Tab.0.center" timestamp="1575640280730">
-      <screen x="0" y="23" width="1440" height="781" />
+    <state x="655" y="328" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2048.1112@0.0.1920.1040" timestamp="1576154661138" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1576162764388">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1398" height="28" key="GridCell.Tab.0.center/0.23.1440.781@0.23.1440.781" timestamp="1575640280730" />
-    <state width="1398" height="28" key="GridCell.Tab.0.center/0.23.1440.786@0.23.1440.786" timestamp="1575639600271" />
-    <state width="535" height="506" key="GridCell.Tab.0.center/0.23.1440.790@0.23.1440.790" timestamp="1575594252043" />
-    <state width="1398" height="28" key="GridCell.Tab.0.left" timestamp="1575640280730">
-      <screen x="0" y="23" width="1440" height="781" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.2048.1112@0.0.1920.1040" timestamp="1576162764388" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1576162764388">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1398" height="28" key="GridCell.Tab.0.left/0.23.1440.781@0.23.1440.781" timestamp="1575640280730" />
-    <state width="1398" height="28" key="GridCell.Tab.0.left/0.23.1440.786@0.23.1440.786" timestamp="1575639600270" />
-    <state width="535" height="506" key="GridCell.Tab.0.left/0.23.1440.790@0.23.1440.790" timestamp="1575594252043" />
-    <state width="1398" height="28" key="GridCell.Tab.0.right" timestamp="1575640280731">
-      <screen x="0" y="23" width="1440" height="781" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.2048.1112@0.0.1920.1040" timestamp="1576162764388" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1576162764388">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1398" height="28" key="GridCell.Tab.0.right/0.23.1440.781@0.23.1440.781" timestamp="1575640280731" />
-    <state width="1398" height="28" key="GridCell.Tab.0.right/0.23.1440.786@0.23.1440.786" timestamp="1575639600271" />
-    <state width="535" height="506" key="GridCell.Tab.0.right/0.23.1440.790@0.23.1440.790" timestamp="1575594252044" />
-    <state x="399" y="246" key="com.intellij.ide.util.TipDialog" timestamp="1575639285960">
-      <screen x="0" y="23" width="1440" height="781" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.2048.1112@0.0.1920.1040" timestamp="1576162764388" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1576162764388">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="399" y="246" key="com.intellij.ide.util.TipDialog/0.23.1440.781@0.23.1440.781" timestamp="1575639285960" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>11</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.2048.1112@0.0.1920.1040" timestamp="1576162764388" />
+    <state width="1877" height="237" key="GridCell.Tab.1.bottom" timestamp="1576161389563">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="237" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.2048.1112@0.0.1920.1040" timestamp="1576161389563" />
+    <state width="1877" height="237" key="GridCell.Tab.1.center" timestamp="1576161389563">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="237" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.2048.1112@0.0.1920.1040" timestamp="1576161389563" />
+    <state width="1877" height="237" key="GridCell.Tab.1.left" timestamp="1576161389563">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="237" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.2048.1112@0.0.1920.1040" timestamp="1576161389563" />
+    <state width="1877" height="237" key="GridCell.Tab.1.right" timestamp="1576161389563">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="237" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.2048.1112@0.0.1920.1040" timestamp="1576161389563" />
+    <state x="438" y="0" key="SettingsEditor" timestamp="1576157421048">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="438" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.2048.1112@0.0.1920.1040" timestamp="1576157421048" />
+    <state x="645" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1576151624521">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="645" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.2048.1112@0.0.1920.1040" timestamp="1576151624521" />
+    <state x="334" y="130" key="new project wizard" timestamp="1576155803828">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="334" y="130" key="new project wizard/0.0.1920.1040/1920.0.2048.1112@0.0.1920.1040" timestamp="1576155803828" />
   </component>
 </project>

@@ -6,8 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
@@ -15,14 +13,9 @@ public class HomeController {
     @FXML
     private HBox pane = new HBox();
     @FXML
-    private TextField newBoard = new TextField();
+    public TextField newBoard = new TextField();
 
-
-
-
-
-    private void initialize()
-    {
+    private void initialize() {
     }
 /*             Button butt = new Button();
                butt.setPrefWidth(160);
@@ -32,32 +25,39 @@ public class HomeController {
                addCardTitle.setPromptText("Add new Card");*/
 
     @FXML
-    private void addNewBoard()
-    {
-        newBoard.setOnAction((event -> {
-            Button Board = new Button();
-            Board.setPrefSize(210,500);
-            Board.setText(newBoard.getText());
-            pane.getChildren().add(Board);
+    private void addNewBoard() {
+        //newBoard.setOnAction((event -> {
+        Button Board = new Button();
+        Board.setPrefSize(210, 500);
+        Board.setText(newBoard.getText());
+        pane.getChildren().add(Board);
 
+//        System.out.println("myinit")
+        board nBoard = new board(newBoard.getText());
+        //System.out.println("kbinit:"+CurrentBoard.getBoardTitle());
+        GlobalData.BoardList.add(nBoard);
+
+        int index=GlobalData.BoardList.size()-1;
 
             Board.setOnMouseClicked(event1 -> {
-                newBoard();
+                newBoard(index);
             });
-        }));
+       // }));
     }
 
     @FXML
-    private void newBoard(){
+    private void newBoard(int index){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Kanban.fxml"));
-            Parent root2 = (Parent) fxmlLoader.load();
+            Parent root2 = fxmlLoader.load();
             Controller controller = new Controller();
             fxmlLoader.setController(controller);
             Stage stage = new Stage();
-            stage.setTitle(newBoard.getText());
+            stage.setTitle(GlobalData.BoardList.get(index).getBoardTitle());
             stage.setScene(new Scene(root2));
+            GlobalData.CurrentIndex=index;
             stage.show();
+            controller.myinit(index,stage);
         } catch(Exception e) {
             e.printStackTrace();
         }
@@ -75,9 +75,6 @@ public class HomeController {
 
     }
 */
-
-
-
 
 
 }

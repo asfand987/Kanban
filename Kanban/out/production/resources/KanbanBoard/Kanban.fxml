@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="KanbanBoard.Controller">
+    <children>
+      <ImageView fitHeight="694.0" fitWidth="956.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Alps-Switzerland.jpg" />
+         </image>
+      </ImageView>      
+        <HBox fx:id="col" layoutX="-1.0" layoutY="67.0" prefHeight="527.0" prefWidth="721.0" />
+        <ScrollPane layoutX="720.0" layoutY="67.0" prefHeight="528.0" prefWidth="205.0">
+            <content>
+                <VBox fx:id="row1">
+                </VBox>
+            </content>
+        </ScrollPane>
+        <ButtonBar layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="899.0">
+            <buttons>
+                <TextField fx:id="boardTitle" text="Board Name" />
+                <TextField fx:id="newCol" onAction="#addColPress" promptText="Add Bew Column" />
+                <Button mnemonicParsing="false" text="Activity Log" />
+            </buttons>
+        </ButtonBar>
+        <Separator layoutX="-5.0" layoutY="594.0" prefHeight="4.0" prefWidth="938.0" />
+        <ButtonBar layoutX="4.0" layoutY="601.0" prefHeight="33.0" prefWidth="922.0">
+            <buttons>
+                <Button mnemonicParsing="false" text="Drag card over to delete =&gt;" />
+            <Pane fx:id="delCard" minHeight="10.0" minWidth="100.0" onDragDropped="#dragDropped" onDragOver="#dragOver" prefHeight="28.0" prefWidth="166.0" style="-fx-background-color: #EDEDED;" />
+            </buttons>
+        </ButtonBar>
+      <Button fx:id="exit" layoutX="893.0" layoutY="1.0" mnemonicParsing="false" onAction="#exitApp" prefHeight="26.0" prefWidth="32.0" text="X" />
+      <MenuBar layoutX="-1.0" layoutY="2.0" prefHeight="26.0" prefWidth="899.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Kanban">
+            <items>
+              <MenuItem fx:id="save_board" mnemonicParsing="false" onAction="#save" text="Save" />
+                  <MenuItem fx:id="load_board" mnemonicParsing="false" text="Load" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+    </children>
+</Pane>
