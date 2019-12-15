@@ -39,7 +39,7 @@
         <ButtonBar layoutX="4.0" layoutY="601.0" prefHeight="33.0" prefWidth="922.0">
             <buttons>
                 <Button mnemonicParsing="false" text="Drag card over to delete =&gt;" />
-            <Pane fx:id="delCard" minHeight="10.0" minWidth="100.0" onDragDropped="#dragDropped" onDragOver="#dragOver" prefHeight="28.0" prefWidth="166.0" style="-fx-background-color: #EDEDED;" />
+            <Pane fx:id="delCard" minHeight="10.0" minWidth="100.0" onDragDropped="#deleteCard" onDragOver="#dragOver" prefHeight="28.0" prefWidth="166.0" style="-fx-background-color: #EDEDED;" />
             </buttons>
         </ButtonBar>
       <Button fx:id="exit" layoutX="893.0" layoutY="1.0" mnemonicParsing="false" onAction="#exitApp" prefHeight="26.0" prefWidth="32.0" text="X" />
