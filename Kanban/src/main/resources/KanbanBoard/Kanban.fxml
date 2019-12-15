@@ -30,6 +30,8 @@
         </ScrollPane>
         <ButtonBar layoutX="16.0" layoutY="27.0" prefHeight="40.0" prefWidth="899.0">
             <buttons>
+                <Button   fx:id="currentWIP" mnemonicParsing="false" text="0 / 5" textFill="#429f40"   />
+                <Button  text="Statistics" onAction="#statsPage" fx:id="statsButton" />
                 <TextField fx:id="boardTitle" text="Board Name" />
                 <TextField fx:id="newCol" onAction="#addColPress" promptText="Add Bew Column" />
                 <Button mnemonicParsing="false" text="Activity Log" />
