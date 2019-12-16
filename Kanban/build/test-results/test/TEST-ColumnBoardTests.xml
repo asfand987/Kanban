@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ColumnBoardTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-12-16T15:18:42" hostname="LAPTOP-9JT90421" time="8.983">
+  <properties/>
+  <testcase name="dragColumn(FxRobot)" classname="ColumnBoardTests" time="3.824"/>
+  <testcase name="deleteColumn(FxRobot)" classname="ColumnBoardTests" time="1.423"/>
+  <testcase name="ChangeColName(FxRobot)" classname="ColumnBoardTests" time="3.734"/>
+  <system-out><![CDATA[Drop detected
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

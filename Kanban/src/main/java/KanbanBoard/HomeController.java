@@ -17,12 +17,6 @@ public class HomeController {
 
     private void initialize() {
     }
-/*             Button butt = new Button();
-               butt.setPrefWidth(160);
-               butt.setText(addCardTitle.getText());
-               column.getChildren().add(butt);
-               addCardTitle.clear();
-               addCardTitle.setPromptText("Add new Card");*/
 
     @FXML
     private void addNewBoard() {
@@ -32,18 +26,12 @@ public class HomeController {
         Board.setPrefSize(210, 500);
         Board.setText(newBoard.getText());
         pane.getChildren().add(Board);
-
-//        System.out.println("myinit")
         board nBoard = new board(newBoard.getText());
-        //System.out.println("kbinit:"+CurrentBoard.getBoardTitle());
         GlobalData.BoardList.add(nBoard);
-
         int index=GlobalData.BoardList.size()-1;
-
-            Board.setOnMouseClicked(event1 -> {
-                newBoard(index);
-            });
-       // }));
+        Board.setOnMouseClicked(event1 -> {
+            newBoard(index);
+        });
     }
 
     @FXML
@@ -63,34 +51,5 @@ public class HomeController {
             e.printStackTrace();
         }
     }
-
-       /* @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-        primaryStage.setTitle("Task Management System v1.0");
-        primaryStage.setScene(new Scene(root));
-        primaryStage.show();
-        HomeController controller = new HomeController();
-        FXMLLoader loader = new FXMLLoader();
-        loader.setController(controller);
-
-    }
-*/
-
-
 }
 
-/*@FXML
-    public void setNewBoard()  {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Kanban.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setTitle(newBoard.getText());
-            stage.setScene(new Scene(root1));
-            stage.show();
-            title.setText(newButton.getText());
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-    }*/

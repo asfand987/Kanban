@@ -39,41 +39,42 @@ public class Controller
     @FXML private VBox row1;
     @FXML private HBox col;
     @FXML private Button exit;
-    Boolean closed = false;
+    @FXML private ScrollPane log1;
+    private Boolean closed = false;
     private LinkedList<String> p = new LinkedList<String>();
     private VBox te = new VBox();
     private Button tempp = new Button();
     private TextField tee =new TextField();
     private Button t = new Button();
-    board CurrentBoard;
+    private board CurrentBoard;
     private int setup = 0;
     private int overallTime;
     private long initialTime = System.currentTimeMillis();
     @FXML private Button statsButton;
     private int wip = 0;
     private Integer storyCount = 0;
-    ArrayList<Integer> arr =new ArrayList<Integer>();
-    ArrayList<Integer> arr2 =new ArrayList<Integer>();
+    private ArrayList<Integer> arr =new ArrayList<Integer>();
+    private ArrayList<Integer> arr2 =new ArrayList<Integer>();
     private String colour;
     @FXML private Button currentWIP;
-    HashMap< String,Label> c1 = new HashMap<String,Label>();
-    HashMap< String,Label> c2 = new HashMap<String,Label>();
-    Label temp1 = new Label();
-
-    Label temp2 = new Label();
-    TextField tempText3 = new TextField();
-    Button tempCheck3 = new Button();
-    VBox tempBox = new VBox();
-    Label tempDes = new Label();
-    XYChart.Series<Number,Number> data = new XYChart.Series<>();
+    private HashMap< String,Label> c1 = new HashMap<String,Label>();
+    private HashMap< String,Label> c2 = new HashMap<String,Label>();
+    private Label temp1 = new Label();
+    private Label temp2 = new Label();
+    private TextField tempText3 = new TextField();
+    private Button tempCheck3 = new Button();
+    private VBox tempBox = new VBox();
+    private Label tempDes = new Label();
+    private XYChart.Series<Number,Number> data = new XYChart.Series<>();
     private int ID = 0;
-    HashMap< String,TextField> c3 = new HashMap<String,TextField>();
-    HashMap< String,Button> c4 = new HashMap<String,Button>();
-    HashMap< String,VBox> c5 = new HashMap<String,VBox>();
-    HashMap< String,Label> c6 = new HashMap<String,Label>();
-    Label temp3 = new Label();
-    HashMap< String,Label> c7 = new HashMap<String,Label>();
+    private HashMap< String,TextField> c3 = new HashMap<String,TextField>();
+    private HashMap< String,Button> c4 = new HashMap<String,Button>();
+    private HashMap< String,VBox> c5 = new HashMap<String,VBox>();
+    private HashMap< String,Label> c6 = new HashMap<String,Label>();
+    private Label temp3 = new Label();
+    private HashMap< String,Label> c7 = new HashMap<String,Label>();
     int count;
+    int log;
 
     private void initialSetup() {
         while (setup < 3) {
@@ -175,37 +176,47 @@ public class Controller
 
     private void log()
     {
+            log++;
             Button but1 = new Button();
+            but1.setId("b"+log );
             but1.setText("Card " + tempp.getText() + " added");
             row1.getChildren().add(but1);
     }
 
     private void logCol()
     {
-        Button but2 = new Button();
-        but2.setText("Column " + tee.getText() + " added");
-        row1.getChildren().add(but2);
+        log++;
+        Button but1 = new Button();
+        but1.setId("b"+log);
+        but1.setText("Column " + tee.getText() + " added");
+        row1.getChildren().add(but1);
     }
 
     private void delCol()
     {
-        Button but2 = new Button();
-        but2.setText("Column " + tee.getText() + " deleted");
-        row1.getChildren().add(but2);
+        log++;
+        Button but1 = new Button();
+        but1.setId("b"+log);
+        but1.setText("Column " + tee.getText() + " deleted");
+        row1.getChildren().add(but1);
     }
 
     private void logDelete()
     {
-        Button but2 = new Button();
-        but2.setText("Card " + tempp.getText() + " deleted");
-        row1.getChildren().add(but2);
+        log++;
+        Button but1 = new Button();
+        but1.setId("b"+log);
+        but1.setText("Card " + tempp.getText() + " deleted");
+        row1.getChildren().add(but1);
     }
 
     private void logCardDrag() 
     {
-        Button but3 = new Button();
-        but3.setText("Card " + tee.getText() + " moved ");
-        row1.getChildren().add(but3);
+        log++;
+        Button but1 = new Button();
+        but1.setId("b"+log);
+        but1.setText("Card " + tee.getText() + " moved ");
+        row1.getChildren().add(but1);
     }
 
     public void myinit(int index,Stage stg)
@@ -263,7 +274,10 @@ public class Controller
 
             Label id = new Label();
             TextField text3 = new TextField();
+            text3.setId("t3");
             Button check3 = new Button("✓");
+            check3.setPrefWidth(80);
+            check3.setId("c3");
             VBox box = new VBox(10);
             check3.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override public void handle(MouseEvent event) {
@@ -277,14 +291,19 @@ public class Controller
                     restrictWIP();
                     HBox items = new HBox(30);
                     Label storyPoint = new Label();
+                    storyPoint.setId("sp");
                     storyPoint.setText(text3.getText());
                     Button check4 = new Button("✓");
+                    check4.setPrefWidth(50);
+                    check4.setId("c4");
                     check4.setOnMouseClicked(new EventHandler<MouseEvent>() {
                         @Override public void handle(MouseEvent event) {
                             storyPoint.setText(text3.getText());
                         }
                     });
                     Button delete1 = new Button("X");
+                    delete1.setPrefWidth(80);
+                    delete1.setId("d1");
                     delete1.setOnMouseClicked(new EventHandler<MouseEvent>() {
                         @Override public void handle(MouseEvent event) {
                             items.getChildren().clear();
@@ -298,6 +317,7 @@ public class Controller
                 }
             });
             Label description = new Label();
+            description.setId("d1");
             Label time1 = new Label();
             time1.setText(String.valueOf(getTimeInSeconds()));
             Label time2 = new Label();
@@ -332,9 +352,12 @@ public class Controller
                     label1.setLayoutX(40);
                     label1.setLayoutY(70);
                     TextField text1 = new TextField();
+                    text1.setId("t1");
                     text1.setLayoutX(40);
                     text1.setLayoutY(110);
                     Button check1 = new Button("✓");
+                    check1.setPrefWidth(70);
+                    check1.setId("c1");
                     check1.setLayoutX(40);
                     check1.setLayoutY(140);
                     check1.setOnMouseClicked(new EventHandler<MouseEvent>(){
@@ -346,11 +369,14 @@ public class Controller
                     label2.setLayoutX(40);
                     label2.setLayoutY(190);
                     TextField text2 = new TextField();
+                    text2.setId("t2");
                     text2.setLayoutX(40);
                     text2.setLayoutY(230);
                     description.setLayoutX(40);
                     description.setLayoutY(260);
                     Button check2 = new Button("✓");
+                    check2.setPrefWidth(80);
+                    check2.setId("c2");
                     check2.setLayoutX(40);
                     check2.setLayoutY(277);
                     check2.setOnMouseClicked(new EventHandler<MouseEvent>(){
@@ -594,8 +620,6 @@ public class Controller
         else {
             colTitle.setText(newCol.getText());
         }
-        //colTitle.setText(newCol.getText());
-
         colTitle.setPrefWidth(160);
         TextField addCardTitle = new TextField();
         addCardTitle.setId("Card");
@@ -692,9 +716,11 @@ public class Controller
                     label1.setLayoutX(40);
                     label1.setLayoutY(70);
                     TextField text1 = new TextField();
+                   // text1.setId("t1");
                     text1.setLayoutX(40);
                     text1.setLayoutY(110);
                     Button check1 = new Button("✓");
+                    //check1.setId("c1");
                     check1.setLayoutX(40);
                     check1.setLayoutY(140);
                     check1.setOnMouseClicked(new EventHandler<MouseEvent>(){

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LogTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2019-12-16T15:18:51" hostname="LAPTOP-9JT90421" time="10.669">
+  <properties/>
+  <testcase name="logColDeleted(FxRobot)" classname="LogTests" time="2.12"/>
+  <testcase name="logCardDeleted(FxRobot)" classname="LogTests" time="2.836"/>
+  <testcase name="logDragCard(FxRobot)" classname="LogTests" time="2.794"/>
+  <testcase name="logColAdded(FxRobot)" classname="LogTests" time="1.142"/>
+  <testcase name="logAddCard(FxRobot)" classname="LogTests" time="1.772"/>
+  <system-out><![CDATA[add card title: Card1
+add card title: Card1
+add card title: Card1
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

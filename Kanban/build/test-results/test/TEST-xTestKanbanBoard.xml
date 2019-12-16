@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="xTestKanbanBoard" tests="4" skipped="0" failures="0" errors="0" timestamp="2019-12-16T15:19:07" hostname="LAPTOP-9JT90421" time="4.659">
+  <properties/>
+  <testcase name="exitButExists()" classname="xTestKanbanBoard" time="0.334"/>
+  <testcase name="testBoardClosesOnClickingExitButton(FxRobot)" classname="xTestKanbanBoard" time="1.68"/>
+  <testcase name="veryifyStatsPageOpens(FxRobot)" classname="xTestKanbanBoard" time="1.312"/>
+  <testcase name="testBoardOpens()" classname="xTestKanbanBoard" time="1.329"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

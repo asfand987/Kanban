@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestKanbanBoard" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-16T11:16:52" hostname="LAPTOP-9JT90421" time="6.066">
-  <properties/>
-  <testcase name="cardOpens(FxRobot)" classname="TestKanbanBoard" time="6.066"/>
-  <system-out><![CDATA[add card title: Card1
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

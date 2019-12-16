@@ -22,7 +22,7 @@
          </image>
       </ImageView>      
         <HBox fx:id="col" layoutX="-1.0" layoutY="67.0" prefHeight="527.0" prefWidth="721.0" />
-        <ScrollPane layoutX="720.0" layoutY="67.0" prefHeight="528.0" prefWidth="205.0">
+        <ScrollPane fx:id="log1" layoutX="720.0" layoutY="67.0" prefHeight="528.0" prefWidth="205.0">
             <content>
                 <VBox fx:id="row1">
                 </VBox>
@@ -30,8 +30,8 @@
         </ScrollPane>
         <ButtonBar layoutX="16.0" layoutY="27.0" prefHeight="40.0" prefWidth="899.0">
             <buttons>
-                <Button   fx:id="currentWIP" mnemonicParsing="false" text="0 / 5" textFill="#429f40"   />
-                <Button  text="Statistics" onAction="#statsPage" fx:id="statsButton" />
+                <Button fx:id="currentWIP" mnemonicParsing="false" text="0 / 5" textFill="#429f40" />
+                <Button fx:id="statsButton" onAction="#statsPage" text="Statistics" />
                 <TextField fx:id="boardTitle" text="Board Name" />
                 <TextField fx:id="newCol" onAction="#addColPress" promptText="Add Bew Column" />
                 <Button mnemonicParsing="false" text="Activity Log" />

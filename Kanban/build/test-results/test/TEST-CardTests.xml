@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CardTests" tests="6" skipped="0" failures="0" errors="0" timestamp="2019-12-16T15:18:18" hostname="LAPTOP-9JT90421" time="24.525">
+  <properties/>
+  <testcase name="ChangeCardName(FxRobot)" classname="CardTests" time="7.396"/>
+  <testcase name="VerifyCardIsBeingDeleted(FxRobot)" classname="CardTests" time="4.333"/>
+  <testcase name="DragCardToNewColumn(FxRobot)" classname="CardTests" time="3.051"/>
+  <testcase name="addStoryPoints(FxRobot)" classname="CardTests" time="4.751"/>
+  <testcase name="cardOpens(FxRobot)" classname="CardTests" time="2.579"/>
+  <testcase name="createNewCard(FxRobot)" classname="CardTests" time="2.404"/>
+  <system-out><![CDATA[add card title: Card1
+add card title: card1
+add card title: card2
+add card title: card1
+add card title: Card1
+add card title: Card1
+add card title: testing
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
