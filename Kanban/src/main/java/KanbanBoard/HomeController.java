@@ -28,6 +28,7 @@ public class HomeController {
     private void addNewBoard() {
         //newBoard.setOnAction((event -> {
         Button Board = new Button();
+        Board.setId("New");
         Board.setPrefSize(210, 500);
         Board.setText(newBoard.getText());
         pane.getChildren().add(Board);
