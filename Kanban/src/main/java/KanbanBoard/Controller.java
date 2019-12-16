@@ -637,7 +637,7 @@ public class Controller
         }
     }
 
-    private void colldragDropped(VBox coll, TextField title,colTitle)
+    private void colldragDropped(VBox coll, TextField title,TextField colTitle)
     {
         coll.setOnDragDropped((DragEvent event) ->
         {
