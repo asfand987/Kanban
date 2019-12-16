@@ -65,7 +65,15 @@ public class Controller
     Button tempCheck3 = new Button();
     VBox tempBox = new VBox();
     Label tempDes = new Label();
-    int count = 0 ;
+    XYChart.Series<Number,Number> data = new XYChart.Series<>();
+    private int ID = 0;
+    HashMap< String,TextField> c3 = new HashMap<String,TextField>();
+    HashMap< String,Button> c4 = new HashMap<String,Button>();
+    HashMap< String,VBox> c5 = new HashMap<String,VBox>();
+    HashMap< String,Label> c6 = new HashMap<String,Label>();
+    Label temp3 = new Label();
+    HashMap< String,Label> c7 = new HashMap<String,Label>();
+
 
     private void initialSetup() {
         while (setup < 3) {
@@ -141,7 +149,7 @@ public class Controller
                 yAxis.setLabel("Average WIP");
                 xAxis.setLabel("Time");
                 LineChart<Number,Number> chart = new LineChart<Number,Number>(xAxis,yAxis);
-                XYChart.Series<Number,Number> data = new XYChart.Series<>();
+                chart.getData().add(data);
                 chart.setLayoutX(-5);
                 chart.setLayoutY(275);
                 chart.setPrefSize(470,280);
@@ -161,7 +169,7 @@ public class Controller
             colour = "-fx-text-fill: rgb(61,156,59);";
         }
         currentWIP.setStyle(colour);
-        currentWIP.setText("WIP: " + storyCount + " / 5");
+        currentWIP.setText("WIP: " + wip + " / 5");
     }
 
     private void log()
@@ -237,10 +245,11 @@ public class Controller
             }
         });
     }
-    private void addCard(TextField title, VBox coll, column columnAdd)
+    private void addCard(TextField title, VBox coll, column columnAdd, TextField colTitle)
     {
         title.setOnAction(e->
         {
+            ID++;
             Button butt = new Button();
             butt.setId("button");
             butt.setPrefWidth(160);
@@ -251,11 +260,20 @@ public class Controller
             title.clear();
             title.setPromptText("Add new Card");
 
+            Label id = new Label();
             TextField text3 = new TextField();
             Button check3 = new Button("✓");
             VBox box = new VBox(10);
             check3.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override public void handle(MouseEvent event) {
+                    if(overallTime > 604800) {
+                        storyCount = 0;
+                        overallTime = overallTime % 604800;
+                    }
+                    storyCount++;
+                    wip++;
+                    data.getData().add(new XYChart.Data(getTimeInSeconds(), wip));
+                    restrictWIP();
                     HBox items = new HBox(30);
                     Label storyPoint = new Label();
                     storyPoint.setText(text3.getText());
@@ -269,6 +287,9 @@ public class Controller
                     delete1.setOnMouseClicked(new EventHandler<MouseEvent>() {
                         @Override public void handle(MouseEvent event) {
                             items.getChildren().clear();
+                             wip--;
+                            data.getData().add(new XYChart.Data(getTimeInSeconds(), wip));
+                            restrictWIP();
                         }
                     });
                     items.getChildren().addAll(storyPoint,check4,delete1);
@@ -279,7 +300,7 @@ public class Controller
             Label time1 = new Label();
             time1.setText(String.valueOf(getTimeInSeconds()));
             Label time2 = new Label();
-            if(title.getText().equals("Done")) {
+            if(colTitle.getText().equals("Done") && time2.getText().isEmpty()) {
                 time2.setText( String.valueOf(getTimeInSeconds()));
                 Integer value = getTimeInSeconds() - Integer.parseInt(time1.getText());
                 arr.add(value);
@@ -295,7 +316,9 @@ public class Controller
             butt.setOnMouseClicked(new EventHandler<MouseEvent>(){
                 @Override public void handle(MouseEvent event){
                     Pane cardPage = new Pane();
-                    Label id = new Label("Given ID: ");
+                    if(id.getText().isEmpty()) {
+                        id.setText(String.valueOf(ID));
+                    }
                     id.setLayoutX(40);
                     id.setLayoutY(30);
                     Label label1 = new Label("To edit the title, type out the preferred title in the textfield below \nand click the button below the textfield");
@@ -342,9 +365,14 @@ public class Controller
                     box.setLayoutX(40);
                     box.setLayoutY(530);
 
-                    temp1 = time1;
                     c1.put(butt.getText(),time1);
                     c2.put(butt.getText(),time2);
+                    c3.put(butt.getText(),text3);
+                    c4.put(butt.getText(),check3);
+                    c5.put(butt.getText(),box);
+                    c6.put(butt.getText(),description);
+                    c7.put(butt.getText(),id);
+                    temp1 = time1;
                     temp2 = time2;
                     tempText3 = text3;
                     tempCheck3 = check3;
@@ -525,7 +553,7 @@ public class Controller
         boardDragOver();
         boardDragDropped();
         collDragOver(column);
-        colldragDropped(column,addCardTitle);
+        colldragDropped(column,addCardTitle,colTitle);
     }
 
     @FXML
@@ -575,13 +603,13 @@ public class Controller
             newCol.setPromptText("Add new Column");
             String style = "-fx-background-color: rgba(255, 255, 255, 0.5);";
             column.setStyle(style);
-            addCard(addCardTitle, column, CurrentColumn);
+            addCard(addCardTitle, column, CurrentColumn, colTitle);
             deleteCol(del, colTitle);
             collDragDone(column);
             boardDragOver();
             boardDragDropped();
             collDragOver(column);
-            colldragDropped(column, addCardTitle);
+            colldragDropped(column, addCardTitle, colTitle);
         setup++;
         initialSetup();
         }
@@ -609,7 +637,7 @@ public class Controller
         }
     }
 
-    private void colldragDropped(VBox coll, TextField title)
+    private void colldragDropped(VBox coll, TextField title,colTitle)
     {
         coll.setOnDragDropped((DragEvent event) ->
         {
@@ -647,9 +675,7 @@ public class Controller
             tempBoat.setOnMouseClicked(new EventHandler<MouseEvent>(){
                 @Override public void handle(MouseEvent event){
                     Pane cardPage = new Pane();
-                    Label id = new Label("Given ID: " );
-                    id.setLayoutX(40);
-                    id.setLayoutY(30);
+                    
                     Label label1 = new Label("To edit the title, type out the preferred title in the textfield below \nand click the button below the textfield");
                     label1.setLayoutX(40);
                     label1.setLayoutY(70);
@@ -684,6 +710,19 @@ public class Controller
                     });
                     temp1 = c1.get(tempBoat.getText());
                     temp2 = c2.get(tempBoat.getText());
+                    if(title.getText().equals("Done") && temp2.getText().isEmpty()) {
+                        temp2.setText( String.valueOf(getTimeInSeconds()));
+                        Integer value = getTimeInSeconds() - Integer.parseInt(temp1.getText());
+                        arr.add(value);
+                    }
+                    tempText3 = c3.get(tempBoat.getText());
+                    tempCheck3 = c4.get(tempBoat.getText());
+                    tempBox = c5.get(tempBoat.getText());
+                    tempDes = c6.get(tempBoat.getText());
+                    temp3 = c7.get(tempBoat.getText());
+                    temp3.setLayoutX(40);
+                    temp3.setLayoutY(30);
+                    
                     temp1.setLayoutX(40);
                     temp1.setLayoutY(330);
                     temp2.setLayoutX(40);
@@ -697,14 +736,14 @@ public class Controller
                     tempCheck3.setLayoutY(500);
                     tempBox.setLayoutX(40);
                     tempBox.setLayoutY(530);
-                    cardPage.getChildren().addAll(id,label1,text1,check1,label2,text2,check2,tempDes,temp1,temp2,label3,tempText3,tempCheck3,tempBox);
+                    cardPage.getChildren().addAll(temp3,label1,text1,check1,label2,text2,check2,tempDes,temp1,temp2,label3,tempText3,tempCheck3,tempBox);
                     ScrollPane scroll = new ScrollPane();
                     scroll.setContent(cardPage);
                     Stage stage = new Stage();
                     stage.setScene(new Scene(scroll,500,550));
                     stage.show();
 
-                    if(title.getText().equals("Done") && temp2.getText().isEmpty()) {
+                    if(colTitle.getText().equals("Done") && temp2.getText().isEmpty()) {
                         temp2.setText( String.valueOf(getTimeInSeconds()));
                         Integer value = getTimeInSeconds() - Integer.parseInt(temp1.getText());
                         arr.add(value);
