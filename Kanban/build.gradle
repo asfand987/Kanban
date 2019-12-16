@@ -14,6 +14,7 @@ repositories {
 }
 
 dependencies {
+
     testCompile(group: "org.testfx", name: "testfx-core", version: "4.0.15-alpha")
     testCompile group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
     testCompile group: 'org.assertj', name: 'assertj-core', version: '3.13.2'
