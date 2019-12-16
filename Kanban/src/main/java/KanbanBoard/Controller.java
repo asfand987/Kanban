@@ -65,6 +65,7 @@ public class Controller
     Button tempCheck3 = new Button();
     VBox tempBox = new VBox();
     Label tempDes = new Label();
+    int count = 0 ;
 
     private void initialSetup() {
         while (setup < 3) {
@@ -241,18 +242,14 @@ public class Controller
         title.setOnAction(e->
         {
             Button butt = new Button();
+            butt.setId("button");
             butt.setPrefWidth(160);
             butt.setText(title.getText());
             coll.getChildren().add(butt);
             tempp = butt;
-            //p.add("User added card " + butt.getText()+ " to "+ collti.getText());
             log();
             title.clear();
             title.setPromptText("Add new Card");
-
-
-
-
 
             TextField text3 = new TextField();
             Button check3 = new Button("✓");
@@ -368,10 +365,6 @@ public class Controller
             collDragPush(coll, butt, title, columnAdd);
             butSetOnDragDetect(butt);
             butDragDone(butt, title, coll);
-
-
-
-
 
         });
     }
@@ -538,10 +531,16 @@ public class Controller
     @FXML
     private void addColPress()
     {
+        count++;
         VBox column = new VBox();
+        String c = Integer.toString(count);
+        column.setId("column" + c);
         column.setPrefSize(160,570);
         Button del = new Button("X");
+        del.setId("deleteCol" + c);
         TextField colTitle = new TextField();
+        colTitle.setId("Col");
+        //colTitle.setText(newCol.getText());
         if(setup == 0 || setup == 2) {
             del.setDisable(true);
         }
@@ -556,34 +555,58 @@ public class Controller
         else {
             colTitle.setText(newCol.getText());
         }
+        //colTitle.setText(newCol.getText());
         colTitle.setPrefWidth(160);
         TextField addCardTitle = new TextField();
+        addCardTitle.setId("Card");
         addCardTitle.setPrefWidth(160);
         tee = colTitle;
-        board cBoard=GlobalData.BoardList.get(GlobalData.BoardList.size()-1);
-        column CurrentColumn = new column(colTitle.getText());
-        cBoard.addColumn(CurrentColumn);
-        logCol();
-        column.getChildren().add(del);
-        col.getChildren().add(column);
-        column.getChildren().add(colTitle);
-        column.getChildren().add(addCardTitle);
-        addCardTitle.setPromptText("Add New Card");
-        newCol.clear();
-        newCol.setPromptText("Add new Column");
-        String style = "-fx-background-color: rgba(255, 255, 255, 0.5);";
-        column.setStyle(style);
-        addCard(addCardTitle, column, CurrentColumn);
-        deleteCol(del,colTitle);
-        collDragDone(column);
-        boardDragOver();
-        boardDragDropped();
-        collDragOver(column);
-        colldragDropped(column,addCardTitle);
-
+        try {
+            board cBoard = GlobalData.BoardList.get(GlobalData.BoardList.size() - 1);
+            column CurrentColumn = new column(colTitle.getText());
+            cBoard.addColumn(CurrentColumn);
+            logCol();
+            column.getChildren().add(del);
+            col.getChildren().add(column);
+            column.getChildren().add(colTitle);
+            column.getChildren().add(addCardTitle);
+            addCardTitle.setPromptText("Add New Card");
+            newCol.clear();
+            newCol.setPromptText("Add new Column");
+            String style = "-fx-background-color: rgba(255, 255, 255, 0.5);";
+            column.setStyle(style);
+            addCard(addCardTitle, column, CurrentColumn);
+            deleteCol(del, colTitle);
+            collDragDone(column);
+            boardDragOver();
+            boardDragDropped();
+            collDragOver(column);
+            colldragDropped(column, addCardTitle);
         setup++;
         initialSetup();
-
+        }
+        catch (Exception e) {
+            column CurrentColumn = new column(colTitle.getText());
+            logCol();
+            column.getChildren().add(del);
+            col.getChildren().add(column);
+            column.getChildren().add(colTitle);
+            column.getChildren().add(addCardTitle);
+            addCardTitle.setPromptText("Add New Card");
+            newCol.clear();
+            newCol.setPromptText("Add new Column");
+            String style = "-fx-background-color: rgba(255, 255, 255, 0.5);";
+            column.setStyle(style);
+            addCard(addCardTitle, column, CurrentColumn);
+            deleteCol(del, colTitle);
+            collDragDone(column);
+            boardDragOver();
+            boardDragDropped();
+            collDragOver(column);
+            colldragDropped(column, addCardTitle);
+            setup++;
+            initialSetup();
+        }
     }
 
     private void colldragDropped(VBox coll, TextField title)
