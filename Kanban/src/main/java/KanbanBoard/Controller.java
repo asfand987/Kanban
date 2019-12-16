@@ -95,6 +95,7 @@ public class Controller
         statsButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
                 Pane statsWindow = new Pane();
+                statsWindow.setId("s");
                 statsWindow.setStyle("-fx-background-color: #FEEEAD");
                 Label label1 = new Label("Overall velocity:\n"  + storyCount + " story points per week");
                 label1.setLayoutX(60);
@@ -292,10 +293,12 @@ public class Controller
                     t = butt;
                 }
             });
+
             butt.setOnMouseClicked(new EventHandler<MouseEvent>(){
                 @Override public void handle(MouseEvent event){
                     Pane cardPage = new Pane();
                     Label id = new Label("Given ID: ");
+                    id.setId("ID");
                     id.setLayoutX(40);
                     id.setLayoutY(30);
                     Label label1 = new Label("To edit the title, type out the preferred title in the textfield below \nand click the button below the textfield");
@@ -548,6 +551,10 @@ public class Controller
             colTitle.setText("To Do");
             colTitle.setDisable(true);
         }
+        else if(setup == 1) {
+            colTitle.setText(newCol.getText());
+           // colTitle.setText("To Do");
+        }
         else if (setup == 2) {
             colTitle.setText("Done");
             colTitle.setDisable(true);
@@ -556,6 +563,7 @@ public class Controller
             colTitle.setText(newCol.getText());
         }
         //colTitle.setText(newCol.getText());
+
         colTitle.setPrefWidth(160);
         TextField addCardTitle = new TextField();
         addCardTitle.setId("Card");
@@ -709,8 +717,6 @@ public class Controller
                         Integer value = getTimeInSeconds() - Integer.parseInt(temp1.getText());
                         arr.add(value);
                     }
-                    //////////
-
                     event.consume();
                 }
             });
@@ -760,6 +766,7 @@ public class Controller
         String str = GlobalData.BoardList.get(GlobalData.CurrentIndex).toJson().toJSONString();
         new KanbanController().save_file(str);
     }
+
     @FXML
     public void load() 
     {

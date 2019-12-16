@@ -17,6 +17,7 @@ import org.testfx.framework.junit5.ApplicationExtension;
 import org.testfx.framework.junit5.Start;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.testfx.matcher.base.WindowMatchers;
 import org.testfx.matcher.control.LabeledMatchers;
 import java.awt.*;
 import java.security.Key;
@@ -54,6 +55,11 @@ class TestKanbanBoard  {
         //sleep(2000);
     }
 */
+   @Test
+   void veryifyStatsPageOpens(FxRobot robot) {
+       robot.clickOn("#statsButton");
+       FxAssert.verifyThat("#s", Node::isVisible);
+   }
 
     @Test
     void exitButExists() {
@@ -188,6 +194,14 @@ class TestKanbanBoard  {
         robot.doubleClickOn("#Col").press(KeyCode.BACK_SPACE).release(KeyCode.BACK_SPACE).write(changeTitle).press(KeyCode.ENTER).release(KeyCode.ENTER);
         FxAssert.verifyThat("#Col", hasText(changeTitle));
         robot.sleep(1000);
+    }
+
+    @Test
+    void cardOpens(FxRobot robot) {
+       robot.clickOn("#newCol").write("Test").press(KeyCode.ENTER).release(KeyCode.ENTER);
+       robot.clickOn("#Card").write("Card1").press(KeyCode.ENTER).release(KeyCode.ENTER);
+       robot.clickOn("#button");
+       FxAssert.verifyThat("#ID", Node::isVisible);
     }
 }
 

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestHomePage" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-12-16T01:33:59" hostname="LAPTOP-9JT90421" time="8.81">
-  <properties/>
-  <testcase name="CreateMultipleBoards(FxRobot)" classname="TestHomePage" time="6.419"/>
-  <testcase name="testBoardOpens()" classname="TestHomePage" time="1.356"/>
-  <testcase name="CreateNewBoard(FxRobot)" classname="TestHomePage" time="1.031"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
