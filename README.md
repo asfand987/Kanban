@@ -1,15 +1,20 @@
-TEAM WHEAT
+Team Wheat - 4 members
+A Kanban board stand alone application
 
-Members:    Humphrey Bonsor
-            Yizhe (Ethan) Chen
-            Asfand Khan
-            Kaixi Li
-            Rahul Ramji
-            
+Features
+Support needed
+The version of the software used must be the following ones :
 
-Important to know:
+Java 11
+Gradle 6
+Launch the Application
+From the terminal use the following command to launch the application
 
-Testing: In the Tests folder there is a file named ReadMe.java
-In it are two tests which work perfectly fine by themselves. However, When we run Gradle Tests. Both of those methods fail sometimes, seems to be randomly. As such, we did not want to risk it so we placed them in a seperate class and commeneted them out. You may wish to run them individually and you will find both tests will pass.
+gradle run
+Test the application
+From the terminal use the following command to run the unit tests
 
+gradle test
+From the terminal use the following command to run the integration tests
 
+gradle integrationTest
